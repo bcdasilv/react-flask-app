@@ -1,0 +1,16 @@
+language: node_js
+
+#if you want to specify a particular node.js version
+node_js:
+  - 14 
+
+before_install:
+- pyenv install 3.7
+
+install:
+- npm install
+- cd src/backend/
+- pip install -r requirements.txt
+
+script:
+
