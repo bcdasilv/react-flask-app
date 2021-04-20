@@ -5,7 +5,7 @@ node_js:
   - 14 
 
 before_install:
-- pyenv install 3.7
+- pyenv install 3.6
 
 install:
 - npm install
