@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from "./better";
+import Forum from "./Forum";
+import Cal from "./Cal";
+import Home from "./Home";
+import App1 from "./App1"
+import {Switch, Route} from "react-router-dom"
+import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {					
+	
+   render(){	
+      return (	
+		<BrowserRouter>		
+			
+			<div className='App'>
+				<h1 class="top">Get Involved - Cal Poly </h1>
+				<div class="it">
+				<Header/>
+				</div>
+				<Switch>
+					<Route path="/calendar" component={Cal}/>
+					<Route path="/forum" component={Forum}/>
+					<Route path="/post" component={App1}/>
+					<Route path="/" component={Home}/>
+				</Switch>
+			</div>
+		</BrowserRouter>
+	);
+	}
 }
 
 export default App;
