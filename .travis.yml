@@ -16,6 +16,9 @@ martrix:
         
     - language: python3
 
+      before_install:
+        - cd src/backend/
+
       install:
         - pip install -r requirements.txt
 
