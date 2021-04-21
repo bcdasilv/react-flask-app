@@ -1,17 +1,32 @@
-language: node_js
+# language: node_js
 
-#if you want to specify a particular node.js version
-node_js:
-  - 14 
+# #if you want to specify a particular node.js version
+# node_js:
+#   - 14 
 
-before_install:
-- pyenv install 3.6.0
+# before_install:
+# - pyenv install 3.6.0
 
-install:
-- npm install
-- cd src/backend/
-- python3 -m pip install --upgrade pip
-- pip install -r requirements.txt
+# install:
+# - npm install
+# - cd src/backend/
+# - python3 -m pip install --upgrade pip
+# - pip install -r requirements.txt
 
-script:
+# script:
 
+matrix:
+
+include:
+
+  - language: node_js
+
+    install:
+      - npm install
+
+  - language: python
+
+    before_install:
+      - cd src/backend/
+    install:
+      - pip install -r requirements.txt
