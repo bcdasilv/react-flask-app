@@ -14,19 +14,17 @@
 # - pip install -r requirements.txt
 
 # script:
-
 matrix:
-
-include:
-
+  include:
   - language: node_js
 
     install:
       - npm install
 
-  - language: python
+  - language: python3
 
     before_install:
       - cd src/backend/
+      
     install:
       - pip install -r requirements.txt
