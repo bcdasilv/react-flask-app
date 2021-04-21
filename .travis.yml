@@ -20,11 +20,17 @@ matrix:
 
     install:
       - npm install
+    
+    script: 
+      - npm run build
 
   - language: python3
 
     before_install:
       - cd src/backend/
-      
+
     install:
       - pip install -r requirements.txt
+
+    script: 
+      - pytest
