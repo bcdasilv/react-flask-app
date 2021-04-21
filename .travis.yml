@@ -1,10 +1,15 @@
-language: node_js    
+language: node_js
 
-  node_js: 
-    - 12
-
+#if you want to specify a particular node.js version
+node_js:
+  - 12 #latest 12.x release 
+  
+# command to install dependencies
 install:
   - npm install
-    
-script: 
+  
+# command to run tests
+#commented out since we don't have tests in javascript
+script:
   - npm run build
+#  - npm test
