@@ -13,6 +13,10 @@ martrix:
         
       script: 
         - npm run build
+
+      branches:
+        only:
+          - main_frontend
         
     - language: python3
 
@@ -24,3 +28,7 @@ martrix:
 
       script: 
         - echo "No tests so far" # pytest could run here
+      
+      branches:
+        only:
+          - main_backend
