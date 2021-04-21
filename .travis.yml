@@ -1,0 +1,23 @@
+martrix:
+  include:
+    - language: node_js    
+      node_js: 
+        - 12
+
+      cache:
+        directories:
+          - node_modules
+
+      install:
+        - npm install
+        
+      script: 
+        - npm run build
+        
+    - language: python3
+
+      install:
+        - pip install -r requirements.txt
+
+      script: 
+        - echo "No tests so far" # pytest could run here
