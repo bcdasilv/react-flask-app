@@ -45,11 +45,4 @@ def get_user(id):
             resp = jsonify(),204
             return resp                
     return jsonify({"error": "User not found"}), 404  
-
-def find_users_by_name_job(name, job):
-    subdict = {'users_list' : []}
-    for user in users['users_list']:
-        if user['name'] == name and user['job'] == job:
-            subdict['users_list'].append(user)
-    return subdict  
     
