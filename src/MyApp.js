@@ -7,6 +7,8 @@ import axios from 'axios';
 function MyApp() {
     const [characters, setCharacters] = useState([]);
 
+    const API_URL = 'https://reactflask-api.herokuapp.com/';
+
     useEffect(() => {
         fetchAll().then( result => {
             if (result)
@@ -36,7 +38,7 @@ function MyApp() {
 
     async function fetchAll(){
         try {
-            const response = await axios.get('http://localhost:5000/users');
+            const response = await axios.get(API_URL+'/users');
             return response.data.users_list;
         }
         catch (error){
@@ -48,7 +50,7 @@ function MyApp() {
 
     async function makePostCall(person){
         try {
-            const response = await axios.post('http://localhost:5000/users', person);
+            const response = await axios.post(API_URL+'/users', person);
             return response;
         }
         catch (error) {
@@ -59,7 +61,7 @@ function MyApp() {
 
     async function makeDeleteCall(id){
         try {
-            const response = await axios.delete('http://localhost:5000/users/'+id);
+            const response = await axios.delete(API_URL+'/users/'+id);
             return response;
         }
         catch (error) {
