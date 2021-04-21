@@ -1,49 +1,7 @@
-# language: node_js
+language: python3
 
-# #if you want to specify a particular node.js version
-# node_js:
-#   - 14 
+  install:
+    - pip install -r requirements.txt
 
-# before_install:
-# - pyenv install 3.6.0
-
-# install:
-# - npm install
-# - cd src/backend/
-# - python3 -m pip install --upgrade pip
-# - pip install -r requirements.txt
-
-# script:
-matrix:
-  include:
-  - language: node_js
-    
-    node_js: 
-      - 12
-
-    cache:
-      directories:
-        - node_modules
-
-    install:
-      - npm install
-    
-    script: 
-      - npm run build
-
-    branches:
-      only: main_frontend
-
-  - language: python3
-
-    before_install:
-      - cd src/backend/
-
-    install:
-      - pip install -r requirements.txt
-
-    script: 
-      - echo "No tests so far" # pytest ...
-    
-    branches:
-      only: main_backend
+  script: 
+    - echo "No tests so far" # pytest ...
