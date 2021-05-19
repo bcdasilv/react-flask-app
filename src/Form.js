@@ -27,7 +27,7 @@ function Form(props) {
     }
 
     return (
-        <form> 
+        <form className="user-form"> 
             <label htmlFor="name">Name</label> 
             <input type="text" name="name" id="name" value={person.name} onChange={handleChange} /> 
             <label htmlFor="job">Job</label> 

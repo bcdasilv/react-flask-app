@@ -7,7 +7,8 @@ import axios from 'axios';
 function MyApp() {
     const [characters, setCharacters] = useState([]);
 
-    const API_URL = 'https://reactflask-api.herokuapp.com/';
+    //const API_URL = 'https://reactflask-api.herokuapp.com/';
+    const API_URL = 'http://localhost:5000/';
 
     useEffect(() => {
         fetchAll().then( result => {
