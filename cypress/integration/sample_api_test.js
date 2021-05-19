@@ -23,6 +23,8 @@ describe('Backend running -- Smoke test', () => {
     });
 });
 
+//Tests below also work
+
 // describe('Adding/Reading Object', () => {
 
 //     it('Sending a user object for insertion', () => {
